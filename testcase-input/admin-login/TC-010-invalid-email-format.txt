@@ -1,0 +1,13 @@
+Testcase Name: Verify invalid email format
+
+Tags: regression, negative, validation
+
+Preconditions:
+- Login page loaded
+
+Step to Reproduce:
+1. Open the Admin Login page
+2. Enter email format admin.com
+3. Enter a password
+4. Click Login
+5. Confirm email format validation is displayed

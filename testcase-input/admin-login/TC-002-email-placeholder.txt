@@ -1,0 +1,12 @@
+Testcase Name: Verify Email field placeholder and icon
+
+Tags: regression, positive, ui
+
+Preconditions:
+- Login page loaded
+
+Step to Reproduce:
+1. Open the Admin Login page
+2. Observe the Email field
+3. Confirm the "Enter Email" placeholder is displayed
+4. Confirm the email icon is displayed

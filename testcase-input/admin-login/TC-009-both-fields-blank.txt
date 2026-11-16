@@ -1,0 +1,12 @@
+Testcase Name: Verify both fields blank
+
+Tags: regression, negative, validation
+
+Preconditions:
+- Login page loaded
+
+Step to Reproduce:
+1. Open the Admin Login page
+2. Leave Email and Password blank
+3. Click Login
+4. Confirm validation messages are displayed

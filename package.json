@@ -1,0 +1,27 @@
+{
+  "name": "vi-commonground-admin-tests",
+  "version": "1.0.0",
+  "description": "Playwright end-to-end tests for Virtual Intros Common Ground admin",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:regression": "playwright test --grep @regression",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report"
+  },
+  "keywords": [
+    "playwright",
+    "e2e",
+    "vi-commonground"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2"
+  }
+}

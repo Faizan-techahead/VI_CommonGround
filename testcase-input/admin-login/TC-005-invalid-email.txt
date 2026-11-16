@@ -1,0 +1,13 @@
+Testcase Name: Verify login with invalid email
+
+Tags: regression, negative, functional
+
+Preconditions:
+- Login page loaded
+
+Step to Reproduce:
+1. Open the Admin Login page
+2. Enter email invalid@test.com
+3. Enter a valid password
+4. Click Login
+5. Confirm an error message is displayed

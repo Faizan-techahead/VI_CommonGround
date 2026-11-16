@@ -1,0 +1,12 @@
+Testcase Name: Verify successful login with valid credentials
+
+Tags: regression, positive, functional
+
+Preconditions:
+- Active admin account exists
+
+Step to Reproduce:
+1. Open the Admin Login page
+2. Enter valid admin email and password
+3. Click Login
+4. Confirm the user is redirected to the post-login admin landing page

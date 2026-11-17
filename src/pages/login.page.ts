@@ -334,11 +334,32 @@ export class LoginPage extends BasePage {
     await expect(this.page, 'User should land on Individual Users after login').toHaveURL(
       new RegExp(`${routes.individualUsers}$`)
     );
-    await this.prepareFlutter();
+
+    const postLoginSearch = this.page.locator('flt-semantics').filter({
+      hasText: 'Search by ID, name, email',
+    }).first();
+
+    // Flutter semantics can lag behind the URL commit; re-enable and wait for a stable marker.
+    for (let attempt = 0; attempt < 3; attempt++) {
+      await this.prepareFlutter();
+      try {
+        await postLoginSearch.waitFor({ state: 'attached', timeout: 10_000 });
+        break;
+      } catch {
+        if (attempt === 2) {
+          throw new Error('Post-login Individual Users UI did not become available after login');
+        }
+      }
+    }
+
+    await expect(
+      postLoginSearch,
+      'Post-login Individual Users search should be present'
+    ).toBeAttached({ timeout: 20_000 });
     await expect(
       this.flutterButton('Individual Users'),
       'Post-login admin landing sidebar should show Individual Users'
-    ).toBeAttached();
+    ).toBeAttached({ timeout: 20_000 });
     await expect(this.page.getByText('Enter Email', { exact: true })).toHaveCount(0);
     await expect(this.page.getByText('Enter Password', { exact: true })).toHaveCount(0);
   }

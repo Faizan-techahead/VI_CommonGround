@@ -1,0 +1,14 @@
+Testcase Name: Verify all table headers are displayed correctly
+
+Tags: regression, positive, ui
+
+Preconditions:
+- Admin logged in
+- User list available
+
+Step to Reproduce:
+1. Open Individual Users page
+2. Confirm all column headers are visible
+
+Suggestion:
+- Assert every Individual Users table header from shared constants

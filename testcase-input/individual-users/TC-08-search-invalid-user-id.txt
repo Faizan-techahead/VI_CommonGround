@@ -1,0 +1,15 @@
+Testcase Name: Verify search with invalid User ID
+
+Tags: regression, negative, functional
+
+Preconditions:
+- Admin logged in
+- Users available
+
+Step to Reproduce:
+1. Open Individual Users page
+2. Search with invalid User ID FAN-99999
+3. Confirm "No Records Found" is displayed
+
+Suggestion:
+- Use IndividualUsersPage.expectNoRecordsFound

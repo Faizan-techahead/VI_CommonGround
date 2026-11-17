@@ -1,0 +1,17 @@
+Testcase Name: Verify search after applying filter
+
+Tags: regression, edge-case, functional
+
+Preconditions:
+- Admin logged in
+- Users available
+
+Step to Reproduce:
+1. Open Individual Users page
+2. Apply Active status filter
+3. Search by email
+4. Confirm correct filtered results appear
+
+Suggestion:
+- Apply Active filter first, then search with INDIVIDUAL_USERS_SEARCH.email
+- Assert results remain Active and match the search

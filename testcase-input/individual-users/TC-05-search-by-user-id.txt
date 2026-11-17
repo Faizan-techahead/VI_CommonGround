@@ -1,0 +1,17 @@
+Testcase Name: Verify search by User ID
+
+Tags: regression, positive, functional
+
+Preconditions:
+- Admin logged in
+- Users available
+
+Step to Reproduce:
+1. Open Individual Users page
+2. Search by User ID FAN-11
+3. Confirm the matching user is displayed
+
+Suggestion:
+- Use IndividualUsersPage search helpers
+- Prefer IU_SEARCH_USER_ID when set; otherwise read a visible Id from the loaded list (stage uses CGP-* rather than spreadsheet FAN-11)
+- Assert the result row contains that User ID

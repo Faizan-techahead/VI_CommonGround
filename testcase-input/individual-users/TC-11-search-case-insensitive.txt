@@ -1,0 +1,17 @@
+Testcase Name: Verify search is case insensitive
+
+Tags: regression, edge-case, functional
+
+Preconditions:
+- Admin logged in
+- Users available
+
+Step to Reproduce:
+1. Open Individual Users page
+2. Search with lowercase gaurav
+3. Note the results
+4. Clear search and search with uppercase GAURAV
+5. Confirm the same results are displayed
+
+Suggestion:
+- Capture result identity (user id / username) from both searches and assert they match

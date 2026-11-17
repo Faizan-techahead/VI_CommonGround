@@ -1,0 +1,14 @@
+Testcase Name: Verify pagination details
+
+Tags: regression, positive, functional
+
+Preconditions:
+- Admin logged in
+- Multiple users exist
+
+Step to Reproduce:
+1. Navigate to Individual Users list
+2. Confirm total records and page number are displayed correctly
+
+Suggestion:
+- Assert pagination summary text that includes total records and current page indicators

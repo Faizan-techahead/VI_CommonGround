@@ -1,0 +1,15 @@
+Testcase Name: Verify search with special characters
+
+Tags: regression, edge-case, functional
+
+Preconditions:
+- Admin logged in
+- Users available
+
+Step to Reproduce:
+1. Open Individual Users page
+2. Search using @#$%^
+3. Confirm the system does not crash and no records are returned
+
+Suggestion:
+- Assert page remains on Individual Users and "No Records Found" (or empty results) is shown

@@ -1,0 +1,16 @@
+Testcase Name: Verify Active status filter
+
+Tags: regression, positive, functional
+
+Preconditions:
+- Admin logged in
+- Active users exist
+
+Step to Reproduce:
+1. Open Individual Users page
+2. Apply Active status filter
+3. Confirm only Active users are displayed
+
+Suggestion:
+- Use IndividualUsersPage status filter helpers
+- Assert every visible row shows Active status

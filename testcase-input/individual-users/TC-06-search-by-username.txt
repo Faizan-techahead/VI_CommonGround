@@ -1,0 +1,16 @@
+Testcase Name: Verify search by username
+
+Tags: regression, positive, functional
+
+Preconditions:
+- Admin logged in
+- Users available
+
+Step to Reproduce:
+1. Open Individual Users page
+2. Search by username Gaurav
+3. Confirm the correct user is displayed
+
+Suggestion:
+- Use IndividualUsersPage search helpers
+- Assert the result row contains username Gaurav

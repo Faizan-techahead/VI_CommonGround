@@ -1,0 +1,14 @@
+Testcase Name: Verify Individual Users page loads successfully
+
+Tags: regression, positive, functional
+
+Preconditions:
+- Admin logged in
+
+Step to Reproduce:
+1. Open Individual Users module
+2. Confirm the user list loads successfully
+
+Suggestion:
+- Use AuthUtils.signInAsAdmin for the Admin logged in precondition
+- Reuse IndividualUsersPage.expectLoaded for the successful list load check

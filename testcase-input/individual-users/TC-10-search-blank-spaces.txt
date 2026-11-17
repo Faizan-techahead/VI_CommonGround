@@ -1,0 +1,16 @@
+Testcase Name: Verify search with blank spaces
+
+Tags: regression, edge-case, functional
+
+Preconditions:
+- Admin logged in
+- Users available
+
+Step to Reproduce:
+1. Open Individual Users page
+2. Enter a blank space in the search field
+3. Confirm blank search does not return incorrect results
+
+Suggestion:
+- Search with a single space character
+- Assert results are either unchanged default list behavior or empty/"No Records Found" — not a crash; do not treat unrelated filtered matches as success

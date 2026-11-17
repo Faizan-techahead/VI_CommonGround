@@ -1,0 +1,16 @@
+Testcase Name: Verify search by email
+
+Tags: regression, positive, functional
+
+Preconditions:
+- Admin logged in
+- Users available
+
+Step to Reproduce:
+1. Open Individual Users page
+2. Search by email for the known user matching ka****99@gmail.com
+3. Confirm the correct user is displayed
+
+Suggestion:
+- Search with a full email from IU_SEARCH_EMAIL / INDIVIDUAL_USERS_SEARCH.email (masked spreadsheet values like ka****99@gmail.com are not searchable)
+- Assert filtered results are displayed for that email

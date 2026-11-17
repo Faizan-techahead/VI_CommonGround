@@ -1,0 +1,14 @@
+Testcase Name: Verify user records are displayed correctly
+
+Tags: regression, positive, functional
+
+Preconditions:
+- Admin logged in
+- Users available
+
+Step to Reproduce:
+1. Open Individual Users page
+2. Confirm user records are displayed
+
+Suggestion:
+- Assert at least one user row is present in the Individual Users table

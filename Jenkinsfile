@@ -8,20 +8,19 @@ pipeline {
 
   environment {
     CI = 'true'
+    // Jenkins does not load your shell profile; Homebrew Node is here on Apple Silicon Macs
+    PATH = "/opt/homebrew/bin:/usr/local/bin:${env.PATH}"
   }
 
   stages {
-    stage('Checkout') {
-      steps {
-        // Option A: Pipeline from SCM — Jenkins checks out automatically
-        // Option B: Pipeline script from local path — use checkout or skip
-        checkout scm
-      }
-    }
+    // Declarative already checks out SCM; no extra Checkout stage needed
 
     stage('Install dependencies') {
       steps {
         sh '''
+          set -e
+          which node
+          which npm
           node -v
           npm -v
           npm ci

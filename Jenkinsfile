@@ -30,9 +30,20 @@ pipeline {
 
     stage('Install Playwright browsers') {
       steps {
-        sh 'npx playwright install chrome'
-        // If Chrome channel fails on agent, use:
-        // sh 'npx playwright install chromium --with-deps'
+        // channel: 'chrome' uses system Google Chrome (see playwright.config.ts).
+        // `playwright install chrome` tries sudo for deps; Jenkins has no TTY/password.
+        sh '''
+          set -e
+          CHROME_BIN="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+          if [ -x "$CHROME_BIN" ]; then
+            echo "Using existing Google Chrome at: $CHROME_BIN"
+            "$CHROME_BIN" --version || true
+          else
+            echo "ERROR: Google Chrome not found at $CHROME_BIN"
+            echo "Install Chrome on the Jenkins agent, or switch the project to Playwright Chromium."
+            exit 1
+          fi
+        '''
       }
     }
 
